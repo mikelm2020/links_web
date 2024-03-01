@@ -8,84 +8,82 @@ from link_bio.styles.styles import Size
 
 def index_links() -> rx.Component:
     return rx.vstack(
-        title("Comunidad"),
+        title("Certificaciones y Cursos"),
         link_button(
-            "Cursos gratis",
-            "Consulta mis tutoriales para aprender programación",
+            "Cursos tomados",
+            "Los cursos que he tomado para desarrollo Backend",
             "/icons/code.svg",
             Route.COURSES.value,
             False,
-            True
+            True,
         ),
         link_button(
-            "Twitch",
-            "Transmisiones sobre programación de lunes a viernes",
-            "/icons/twitch.svg",
-            const.TWITCH_URL
+            "AWS Certified Cloud Practitioner",
+            "Entendimiento fundamental de los servicios IT y su uso en la Nube de AWS",
+            "/icons/aws.svg",
+            const.PRACTITIONER_URL,
         ),
         link_button(
-            "Discord",
-            "El chat y los grupos de estudio de la comunidad",
-            "/icons/discord.svg",
-            const.DISCORD_URL
+            "AWS re/Start Graduate",
+            "Diploma de Graduación del programa de AWS re/Start",
+            "/icons/aws.svg",
+            const.RESTART_URL,
         ),
         link_button(
-            "YouTube",
-            "Tutoriales sobre desarrollo de software semanales",
-            "/icons/youtube.svg",
-            const.YOUTUBE_URL
+            "Cloud Developer en AWS",
+            "Bootcamp Cloud Developer en BootCamp Institute ",
+            "/icons/aws.svg",
+            const.CLOUD_DEVELOPER_URL,
         ),
         link_button(
-            "YouTube [canal secundario]",
-            "Emisiones en directo destacadas",
-            "/icons/youtube.svg",
-            const.YOUTUBE_SECONDARY_URL
+            "Certificado de Inglés EF SET",
+            "Certificado de calificación de prueba de Inglés EF SET",
+            "/icons/efset.svg",
+            const.EF_SET_URL,
         ),
-
-        title("Recursos y más"),
+        title("Repositorios importantes"),
         link_button(
-            "Git y GitHub desde cero",
-            "Aquí puedes comprar mi libro en formato físico y eBook",
-            "/icons/git.svg",
-            const.BOOK_URL
-        ),
-        link_button(
-            "Libros recomendados",
-            "Mi listado de libros sobre programación, ciencia y tecnología",
-            "/icons/book.svg",
-            const.BOOKS_URL
+            "Backend de la App del Buen Conejo v 2.0",
+            "API para la app de la Organización del Buen Conejo",
+            "/icons/python.svg",
+            const.RABBIT_URL,
         ),
         link_button(
-            "Mi setup",
-            "Listado con todos los elementos que uso en mi trabajo",
-            "/icons/setup.svg",
-            const.SETUP_URL
+            "Plataforma de busqueda de mascotas",
+            "Colaboración en el proyecto de No Country en el área del Backend con Fast API",
+            "/icons/python.svg",
+            const.NC_PETS_URL,
         ),
         link_button(
-            "MoureDev",
-            "Mi sitio web",
-            "/icons/logo.png",
-            const.MOUREDEV_URL
+            "Plataforma del Buen Conejo v 1.0",
+            "Colaboración en el proyecto de No Country en el área del Backend con Django Rest Framework",
+            "/icons/python.svg",
+            const.NC_RABBITS_URL,
         ),
         link_button(
-            "Invítame a un café",
-            "¿Quieres ayudarme a que siga creando contenido?",
-            "/icons/coffee.svg",
-            const.COFFEE_URL
+            "API para Lista de Reproducción de Video Streaming",
+            "API en Django Rest Framework para el proyecto personal",
+            "/icons/python.png",
+            const.VIDEO_STREAMING_URL,
         ),
-
+        link_button(
+            "API para una Veterinaria",
+            "API en Django Rest Framework usando Docker para el proyecto personal",
+            "/icons/python.svg",
+            const.VETERINARY_URL,
+        ),
+        link_button(
+            "Eventos SAM Avanzados",
+            "Demo de Aplicación Ecommerce para crear una orden con la Arquitectura Conducida a Eventos utilizando el framework SAM para AWS",
+            "/icons/python.svg",
+            const.SAM_ADVANCED_URL,
+        ),
         title("Contacto"),
-        link_button(
-            "MyPublicInbox",
-            "Respuesta rápida y con preferencia",
-            "/icons/checkemail.svg",
-            const.MYPUBLICINBOX_URL
-        ),
         link_button(
             "Email",
             const.EMAIL,
             "/icons/email.svg",
-            f"mailto:{const.EMAIL}"
+            f"mailto:{const.EMAIL}",
         ),
         width="100%",
         spacing=Size.DEFAULT.value,

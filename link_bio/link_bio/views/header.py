@@ -11,61 +11,43 @@ def header(details=True) -> rx.Component:
     return rx.vstack(
         rx.hstack(
             rx.avatar(
-                name="Brais Moure",
+                name="Miguel Angel López Monroy",
                 size="xl",
                 src="/avatar.jpg",
                 color=TextColor.BODY.value,
                 bg=Color.CONTENT.value,
                 padding="2px",
                 border="4px",
-                border_color=Color.PRIMARY.value
+                border_color=Color.BORDER.value,
             ),
             rx.vstack(
-                rx.heading(
-                    "Brais Moure",
-                    size="lg"
-                ),
+                rx.heading("Miguel Angel López Monroy", size="lg"),
                 rx.text(
-                    "@mouredev",
+                    "@miguellopezmdev",
                     margin_top=Size.ZERO.value,
-                    color=Color.PRIMARY.value
+                    color=Color.PRIMARY.value,
                 ),
                 rx.hstack(
                     link_icon(
                         "/icons/github.svg",
                         const.GITHUB_URL,
-                        "GitHub"
+                        "GitHub",
                     ),
                     link_icon(
                         "/icons/x.svg",
                         const.TWITTER_X_URL,
-                        "Twitter/X"
-                    ),
-                    link_icon(
-                        "/icons/instagram.svg",
-                        const.INSTAGRAM_URL,
-                        "Instagram"
-                    ),
-                    link_icon(
-                        "/icons/tiktok.svg",
-                        const.TIKTOK_URL,
-                        "TikTok"
-                    ),
-                    link_icon(
-                        "/icons/spotify.svg",
-                        const.SPOTIFY_URL,
-                        "Spotify"
+                        "Twitter/X",
                     ),
                     link_icon(
                         "/icons/linkedin.svg",
                         const.LINKEDIN_URL,
-                        "LinkedIn"
+                        "LinkedIn",
                     ),
-                    spacing=Size.LARGE.value
+                    spacing=Size.LARGE.value,
                 ),
-                align_items="start"
+                align_items="start",
             ),
-            spacing=Size.DEFAULT.value
+            spacing=Size.DEFAULT.value,
         ),
         rx.cond(
             details,
@@ -73,37 +55,38 @@ def header(details=True) -> rx.Component:
                 rx.flex(
                     info_text(
                         f"{experience()}+",
-                        "años de experiencia"
+                        "años de experiencia",
                     ),
                     rx.spacer(),
                     info_text(
-                        "100+", "aplicaciones creadas"
+                        "3+",
+                        "años Python",
                     ),
                     rx.spacer(),
                     info_text(
-                        "1M+", "seguidores"
+                        "1",
+                        "certificación AWS",
                     ),
-                    width="100%"
+                    width="100%",
                 ),
                 rx.text(
                     f"""
-            Soy ingeniero de software y actualmente trabajo como freelance
-            full-stack developer iOS y Android.
-            Además, creo contenido formativo sobre programación en redes.
+            Soy ingeniero en Computación egresado de la UNAM y actualmente colaboro en el desarrollo de una API en un proyecto OpenSource
+            para el control de Granjeros de conejos
             Aquí podrás encontrar todos mis enlaces de interés ¡Bienvenid@!
             """,
                     font_size=Size.DEFAULT.value,
-                    color=TextColor.BODY.value
+                    color=TextColor.CONTENT.value,
                 ),
                 width="100%",
-                spacing=Size.BIG.value
-            )
+                spacing=Size.BIG.value,
+            ),
         ),
         width="100%",
         spacing=Size.BIG.value,
-        align_items="start"
+        align_items="start",
     )
 
 
 def experience() -> int:
-    return datetime.date.today().year - 2010
+    return datetime.date.today().year - 1997

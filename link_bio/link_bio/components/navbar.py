@@ -9,16 +9,16 @@ def navbar() -> rx.Component:
     return rx.hstack(
         rx.link(
             rx.box(
-                rx.span("moure", color=Color.PRIMARY.value),
+                rx.span("miguellopezm", color=Color.PRIMARY.value),
                 rx.span("dev", color=Color.SECONDARY.value),
-                style=styles.navbar_title_style
+                style=styles.navbar_title_style,
             ),
-            href=Route.INDEX.value
+            href=Route.INDEX.value,
         ),
         position="sticky",
-        bg=Color.CONTENT.value,
+        bg=Color.BGNAVBAR.value,
         padding_x=Size.BIG.value,
         padding_y=Size.DEFAULT.value,
         z_index="999",
-        top="0"
+        top="0",
     )

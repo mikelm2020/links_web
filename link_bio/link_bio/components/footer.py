@@ -12,42 +12,44 @@ def footer() -> rx.Component:
             src="/logo.png",
             height=Size.VERY_BIG.value,
             width=Size.VERY_BIG.value,
-            alt="Logotipo de MoureDev. Una \"eme\" entre llaves."
+            alt="Logotipo de miguellopezmdev.",
         ),
         rx.link(
             rx.box(
-                f"© 2014-{datetime.date.today().year} ",
-                rx.span("MoureDev by Brais Moure", color=Color.PRIMARY.value),
-                " v3.",
-                padding_top=Size.DEFAULT.value
+                f"© 2020-{datetime.date.today().year} ",
+                rx.span(
+                    "miguellopezmdev by Miguel Angel López", color=Color.PRIMARY.value
+                ),
+                " v1.",
+                padding_top=Size.DEFAULT.value,
             ),
-            href=const.MOUREDEV_URL,
+            href=const.LOPEZ_DEV_URL,
             is_external=True,
-            font_size=Size.MEDIUM.value
+            font_size=Size.MEDIUM.value,
         ),
         rx.link(
             rx.hstack(
                 rx.image(
                     src="/icons/github.svg",
                     height=Size.LARGE.value,
-                    width=Size.LARGE.value
+                    width=Size.LARGE.value,
                 ),
                 rx.text(
-                    "BUILDING SOFTWARE WITH ♥ FROM GALICIA TO THE WORLD.",
+                    "BACKEND DEVELOPER EN CIUDAD DE MEXICO",
                     font_size=Size.MEDIUM.value,
-                    margin_top=Size.ZERO.value
+                    margin_top=Size.ZERO.value,
                 ),
             ),
             href=const.REPO_URL,
-            is_external=True
+            is_external=True,
         ),
         float_button(
             icon=rx.Image(src="/icons/donate.svg"),
-            href=const.COFFEE_URL
+            href=const.PAYPAL_ME_URL,
         ),
         margin_bottom=Size.BIG.value,
         padding_bottom=Size.VERY_BIG.value,
         padding_x=Size.BIG.value,
         spacing=Size.ZERO.value,
-        color=TextColor.FOOTER.value
+        color=TextColor.FOOTER.value,
     )

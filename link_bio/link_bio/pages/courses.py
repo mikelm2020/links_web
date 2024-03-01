@@ -6,7 +6,6 @@ from link_bio.components.navbar import navbar
 from link_bio.components.footer import footer
 from link_bio.views.header import header
 from link_bio.views.courses_links import courses_links
-from link_bio.views.sponsors import sponsors
 from link_bio.styles.styles import Size
 
 
@@ -15,7 +14,7 @@ from link_bio.styles.styles import Size
     title=utils.courses_title,
     description=utils.courses_description,
     image=utils.preview,
-    meta=utils.courses_meta
+    meta=utils.courses_meta,
 )
 def courses() -> rx.Component:
     return rx.box(
@@ -25,12 +24,11 @@ def courses() -> rx.Component:
             rx.vstack(
                 header(details=False),
                 courses_links(),
-                sponsors(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",
                 margin_y=Size.BIG.value,
-                padding=Size.BIG.value
+                padding=Size.BIG.value,
             )
         ),
-        footer()
+        footer(),
     )
