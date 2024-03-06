@@ -63,7 +63,7 @@ def index_links() -> rx.Component:
         link_button(
             "API para Lista de Reproducción de Video Streaming",
             "API en Django Rest Framework para el proyecto personal",
-            "/icons/python.png",
+            "/icons/python.svg",
             const.VIDEO_STREAMING_URL,
         ),
         link_button(

@@ -10,8 +10,8 @@ def footer() -> rx.Component:
     return rx.vstack(
         rx.image(
             src="/logo.png",
-            height=Size.VERY_BIG.value,
-            width=Size.VERY_BIG.value,
+            height=Size.VERY_EXTRA_BIG.value,
+            width=Size.VERY_EXTRA_BIG.value,
             alt="Logotipo de miguellopezmdev.",
         ),
         rx.link(
