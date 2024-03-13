@@ -22,10 +22,13 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run build script
+      - name: Permissions build script
         run: 
           chmod +x ./link_bio/remote_build.sh
-          sh /link_bio/remote_build.sh
+
+      - name: Run build script
+        run:
+          ./link_bio/remote_build.sh
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
