@@ -6,6 +6,7 @@ from link_bio.components.footer import footer
 from link_bio.views.header import header
 from link_bio.views.index_links import index_links
 from link_bio.styles.styles import Size
+from link_bio.state.PageState import PageState
 
 
 @rx.page(
@@ -13,6 +14,7 @@ from link_bio.styles.styles import Size
     description=utils.index_description,
     image=utils.preview,
     meta=utils.index_meta,
+    on_load=PageState.check_live,
 )
 def index() -> rx.Component:
     return rx.box(
@@ -20,7 +22,7 @@ def index() -> rx.Component:
         navbar(),
         rx.center(
             rx.vstack(
-                header(),
+                header(live=PageState.is_live),
                 index_links(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",

@@ -8,6 +8,7 @@ class Color(Enum):
     CONTENT = "#142342"
     BORDER = "#a7d0ff"
     BGNAVBAR = "#a7d0ff"
+    PURPLE = "#9146ff"
 
 
 class TextColor(Enum):
