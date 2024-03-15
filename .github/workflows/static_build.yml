@@ -22,9 +22,12 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run build script
+      - name: Permissions build script
         run: 
           chmod +x ./link_bio/remote_build.sh
+
+      - name: Run build script
+        run:
           ./link_bio/remote_build.sh
 
       - name: Commit and Push changes
