@@ -3,10 +3,10 @@ import link_bio.constants as const
 from link_bio.routes import Route
 from link_bio.components.link_button import link_button
 from link_bio.components.title import title
-from link_bio.styles.styles import Size
+from link_bio.styles.styles import Size, Color
 
 
-def index_links() -> rx.Component:
+def index_links(featured=[]) -> rx.Component:
     return rx.vstack(
         title("Certificaciones y Cursos"),
         link_button(
@@ -15,7 +15,7 @@ def index_links() -> rx.Component:
             "/icons/code.svg",
             Route.COURSES.value,
             False,
-            True,
+            Color.SECONDARY.value,
         ),
         link_button(
             "AWS Certified Cloud Practitioner",
@@ -41,6 +41,28 @@ def index_links() -> rx.Component:
             "/icons/efset.svg",
             const.EF_SET_URL,
         ),
+        # rx.cond(
+        #     len(featured) > 0,
+        #     rx.vstack(
+        #         title("Destacado"),
+        #         rx.foreach(
+        #             featured,
+        #             lambda item: rx.responsive_grid(
+        #                 rx.text(item)
+        # rx.link(
+        #     rx.image(
+        #         src=item["image"],
+        #     ),
+        #     rx.text(
+        #         item["title"],
+        #     ),
+        #     href=item["url"],
+        #     is_external=True,
+        # ),
+        # ),
+        # ),
+        # ),
+        # ),
         title("Repositorios importantes"),
         link_button(
             "Backend de la App del Buen Conejo v 2.0",

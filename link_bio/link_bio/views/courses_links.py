@@ -2,7 +2,7 @@ import reflex as rx
 import link_bio.constants as const
 from link_bio.components.link_button import link_button
 from link_bio.components.title import title
-from link_bio.styles.styles import Size
+from link_bio.styles.styles import Size, Color
 
 
 def courses_links() -> rx.Component:
@@ -13,7 +13,7 @@ def courses_links() -> rx.Component:
             "Curso de la base de datos relacional de Amazon",
             "/icons/aws.svg",
             const.DYNAMO_DB_URL,
-            highlight=True,
+            highlight_color=Color.SECONDARY.value,
         ),
         link_button(
             "Roles y Seguridad con IAM",

@@ -10,6 +10,7 @@ LOPEZ_DEV_URL = ""
 GITHUB_URL = "https://github.com/mikelm2020"
 TWITTER_X_URL = "https://twitter.com/miguellopezmdev"
 LINKEDIN_URL = "https://www.linkedin.com/in/miguellopezmdev/"
+TWITCH_URL = "https://www.twitch.tv/mikellm2024"
 
 # Certificaciones
 PRACTITIONER_URL = "https://www.credly.com/badges/9b944ebb-3333-4d11-b3d2-7f3176919a41/linked_in_profile"

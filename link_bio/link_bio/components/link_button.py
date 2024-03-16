@@ -3,7 +3,9 @@ import link_bio.styles.styles as styles
 from link_bio.styles.styles import Size, Color
 
 
-def link_button(title: str, body: str, image: str, url: str, is_external=True, highlight=False) -> rx.Component:
+def link_button(
+    title: str, body: str, image: str, url: str, is_external=True, highlight_color=None
+) -> rx.Component:
     return rx.link(
         rx.button(
             rx.hstack(
@@ -12,7 +14,7 @@ def link_button(title: str, body: str, image: str, url: str, is_external=True, h
                     width=Size.LARGE.value,
                     height=Size.LARGE.value,
                     margin=Size.MEDIUM.value,
-                    alt=title
+                    alt=title,
                 ),
                 rx.vstack(
                     rx.text(title, style=styles.button_title_style),
@@ -20,14 +22,14 @@ def link_button(title: str, body: str, image: str, url: str, is_external=True, h
                     align_items="start",
                     spacing=Size.SMALL.value,
                     padding_y=Size.SMALL.value,
-                    padding_right=Size.SMALL.value
+                    padding_right=Size.SMALL.value,
                 ),
-                width="100%"
+                width="100%",
             ),
-            border_color=Color.SECONDARY.value if highlight else None,
-            border_width="2px" if highlight else None
+            border_color=highlight_color,
+            border_width="2px" if highlight_color != None else None,
         ),
         href=url,
         is_external=is_external,
-        width="100%"
+        width="100%",
     )
