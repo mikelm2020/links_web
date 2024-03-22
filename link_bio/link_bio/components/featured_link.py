@@ -2,7 +2,7 @@ import reflex as rx
 import link_bio.styles.styles as styles
 
 from link_bio.model.Featured import Featured
-from link_bio.styles.styles import Size, Color
+from link_bio.styles.styles import Size, Color, Spacing
 
 
 def featured_link(featured: Featured) -> rx.Component:
@@ -11,15 +11,16 @@ def featured_link(featured: Featured) -> rx.Component:
             rx.image(
                 src=featured.image,
                 border_radius=Size.DEFAULT.value,
-                height="100",
-                width="200",
+                # background=Color.CONTENT.value,
             ),
             rx.text(
                 featured.title,
+                size=Spacing.VERY_SMALL.value,
                 style=styles.button_body_style,
             ),
-            spacing=Size.SMALL.value,
+            spacing=Spacing.SMALL.value,
             align_items="start",
+            class_name=styles.FADEIN_ANIMATION,
         ),
         href=featured.url,
         is_external=True,

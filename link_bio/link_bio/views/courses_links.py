@@ -2,7 +2,7 @@ import reflex as rx
 import link_bio.constants as const
 from link_bio.components.link_button import link_button
 from link_bio.components.title import title
-from link_bio.styles.styles import Size, Color
+from link_bio.styles.styles import Spacing, Color
 
 
 def courses_links() -> rx.Component:
@@ -166,5 +166,5 @@ def courses_links() -> rx.Component:
             const.HTML_CSS_URL,
         ),
         width="100%",
-        spacing=Size.DEFAULT.value,
+        spacing=Spacing.DEFAULT.value,
     )

@@ -4,11 +4,11 @@ from link_bio.routes import Route
 from link_bio.components.link_button import link_button
 from link_bio.components.title import title
 from link_bio.components.featured_link import featured_link
-from link_bio.styles.styles import Size, Color
-from link_bio.model.Featured import Featured
+from link_bio.styles.styles import Spacing, Color
+from link_bio.state.PageState import PageState
 
 
-def index_links(featured: list[Featured]) -> rx.Component:
+def index_links() -> rx.Component:
     return rx.vstack(
         title("Certificaciones y Cursos"),
         link_button(
@@ -44,18 +44,18 @@ def index_links(featured: list[Featured]) -> rx.Component:
             const.EF_SET_URL,
         ),
         rx.cond(
-            featured,
+            PageState.featured_info,
             rx.vstack(
-                title("Cursos que estoy tomando actualmente"),
-                rx.responsive_grid(
+                title("Curso que voy a tomar próximamente"),
+                rx.flex(
                     rx.foreach(
-                        featured,
+                        PageState.featured_info,
                         featured_link,
                     ),
-                    columns=[1, 2],
-                    spacing=Size.DEFAULT.value,
+                    flex_direction=["column", "row"],
+                    spacing=Spacing.DEFAULT.value,
                 ),
-                spacing=Size.DEFAULT.value,
+                spacing=Spacing.DEFAULT.value,
             ),
         ),
         title("Repositorios importantes"),
@@ -103,5 +103,6 @@ def index_links(featured: list[Featured]) -> rx.Component:
             f"mailto:{const.EMAIL}",
         ),
         width="100%",
-        spacing=Size.DEFAULT.value,
+        spacing=Spacing.DEFAULT.value,
+        on_mount=PageState.featured_links,
     )

@@ -1,46 +1,33 @@
 import reflex as rx
 import datetime
 import link_bio.constants as const
-from link_bio.styles.styles import Size
+from link_bio.styles.styles import Size, Spacing
 from link_bio.styles.colors import Color, TextColor
 from link_bio.components.link_icon import link_icon
 from link_bio.components.info_text import info_text
-from link_bio.components.link_button import link_button
-from link_bio.model.Live import Live
 
 
-def header(details=True, live_status=Live(live=False, title="")) -> rx.Component:
+def header(details=True) -> rx.Component:
     return rx.vstack(
         rx.hstack(
-            rx.avatar(
-                rx.cond(
-                    live_status.live,
-                    rx.link(
-                        rx.avatar_badge(
-                            rx.image(
-                                src="/icons/twitch.svg",
-                                height=Size.SMALL.value,
-                                width=Size.SMALL.value,
-                            ),
-                            bg=Color.PURPLE.value,
-                            border_color=Color.PURPLE.value,
-                            class_name="blink",
-                        ),
-                        href=const.TWITCH_URL,
-                        is_external=True,
-                    ),
+            rx.box(
+                rx.avatar(
+                    name="Miguel Angel López Monroy",
+                    size=Spacing.MEDIUM_BIG.value,
+                    src="/avatar.jpg",
+                    radius="full",
+                    color=TextColor.BODY.value,
+                    bg=Color.CONTENT.value,
+                    padding="2px",
+                    border=f"4px solid {Color.PRIMARY.value}",
                 ),
-                name="Miguel Angel López Monroy",
-                size="xl",
-                src="/avatar.jpg",
-                color=TextColor.BODY.value,
-                bg=Color.CONTENT.value,
-                padding="2px",
-                border="4px",
-                border_color=Color.BORDER.value,
+                position="relative",
             ),
             rx.vstack(
-                rx.heading("Miguel Angel López Monroy", size="lg"),
+                rx.heading(
+                    "Miguel Angel López Monroy",
+                    size=Spacing.BIG.value,
+                ),
                 rx.text(
                     "@miguellopezmdev",
                     margin_top=Size.ZERO.value,
@@ -62,11 +49,14 @@ def header(details=True, live_status=Live(live=False, title="")) -> rx.Component
                         const.LINKEDIN_URL,
                         "LinkedIn",
                     ),
-                    spacing=Size.LARGE.value,
+                    spacing=Spacing.LARGE.value,
+                    padding_top=Size.SMALL.value,
                 ),
+                spacing=Spacing.ZERO.value,
                 align_items="start",
             ),
-            spacing=Size.DEFAULT.value,
+            align="end",
+            spacing=Spacing.DEFAULT.value,
         ),
         rx.cond(
             details,
@@ -88,16 +78,6 @@ def header(details=True, live_status=Live(live=False, title="")) -> rx.Component
                     ),
                     width="100%",
                 ),
-                rx.cond(
-                    live_status.live,
-                    link_button(
-                        "En directo",
-                        live_status.title,
-                        "/cons/twitch.svg",
-                        const.TWITCH_URL,
-                        highlight_color=Color.PURPLE.value,
-                    ),
-                ),
                 rx.text(
                     f"""
             Soy ingeniero en Computación egresado de la UNAM y actualmente colaboro en el desarrollo de una API en un proyecto OpenSource
@@ -108,11 +88,11 @@ def header(details=True, live_status=Live(live=False, title="")) -> rx.Component
                     color=TextColor.CONTENT.value,
                 ),
                 width="100%",
-                spacing=Size.BIG.value,
+                spacing=Spacing.BIG.value,
             ),
         ),
         width="100%",
-        spacing=Size.BIG.value,
+        spacing=Spacing.BIG.value,
         align_items="start",
     )
 
