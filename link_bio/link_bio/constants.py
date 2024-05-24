@@ -25,6 +25,11 @@ NC_RABBITS_URL = "https://github.com/No-Country/s11-17-n-python-react"
 VIDEO_STREAMING_URL = "https://github.com/mikelm2020/video-streaming"
 VETERINARY_URL = "https://github.com/mikelm2020/veterinary"
 SAM_ADVANCED_URL = "https://github.com/mikelm2020/sam-events-advanced"
+RENTOPIA_URL = "https://github.com/mikelm2020/rentopia"
+DIARY_URL = "https://github.com/mikelm2020/diary"
+ROLES_URL = "https://github.com/mikelm2020/roles"
+NUWEHACK_URL = "https://github.com/mikelm2020/nuwehack-cloud-tasker"
+
 
 # Contacto
 EMAIL = "miguel.lopezm.dev@gmail.com"

@@ -1,9 +1,8 @@
 import link_bio.constants as const
-from .TwitchAPI import TwitchAPI
-from .SupabaseAPI import SupabaseAPI
 from link_bio.model.Live import Live
-from link_bio.model.Featured import Featured
 
+from .SupabaseAPI import SupabaseAPI
+from .TwitchAPI import TwitchAPI
 
 TWITCH_API = TwitchAPI()
 SUPABASE_API = SupabaseAPI()

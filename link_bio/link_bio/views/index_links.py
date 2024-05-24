@@ -1,11 +1,12 @@
 import reflex as rx
+
 import link_bio.constants as const
-from link_bio.routes import Route
+from link_bio.components.featured_link import featured_link
 from link_bio.components.link_button import link_button
 from link_bio.components.title import title
-from link_bio.components.featured_link import featured_link
-from link_bio.styles.styles import Spacing, Color
+from link_bio.routes import Route
 from link_bio.state.PageState import PageState
+from link_bio.styles.styles import Color, Spacing
 
 
 def index_links() -> rx.Component:
@@ -60,22 +61,46 @@ def index_links() -> rx.Component:
         ),
         title("Repositorios importantes"),
         link_button(
+            "Alquiler de propiedades Rentopia",
+            "Proyecto personal de la API de un Alquiler de propiedades en colaboración con un grupo multinacional de desarrolladores a mi cargo",
+            "/icons/python.svg",
+            const.RENTOPIA_URL,
+        ),
+        link_button(
+            "Backend de una Agenda similar a la de Android",
+            "Poyecto de una API para una Agenda de contactos validando teléfonos",
+            "/icons/python.svg",
+            const.DIARY_URL,
+        ),
+        link_button(
+            "Manejo de Roles en Django",
+            "Proyecto del manejo de Roles en Django de un sistema administrativo",
+            "/icons/python.svg",
+            const.ROLES_URL,
+        ),
+        link_button(
+            "Particpación del Hackaton de Nuwehack Cloud",
+            "Proyecto realizado en el Hackaton de Nuwehack Cloud utilizando Terraform y Lambda Functions de AWS",
+            "/icons/python.svg",
+            const.NUWEHACK_URL,
+        ),
+        link_button(
             "Backend de la App del Buen Conejo v 2.0",
             "API para la app de la Organización del Buen Conejo",
             "/icons/python.svg",
             const.RABBIT_URL,
         ),
         link_button(
-            "Plataforma de busqueda de mascotas",
-            "Colaboración en el proyecto de No Country en el área del Backend con Fast API",
-            "/icons/python.svg",
-            const.NC_PETS_URL,
-        ),
-        link_button(
             "Plataforma del Buen Conejo v 1.0",
             "Colaboración en el proyecto de No Country en el área del Backend con Django Rest Framework",
             "/icons/python.svg",
             const.NC_RABBITS_URL,
+        ),
+        link_button(
+            "Plataforma de busqueda de mascotas",
+            "Colaboración en el proyecto de No Country en el área del Backend con Fast API",
+            "/icons/python.svg",
+            const.NC_PETS_URL,
         ),
         link_button(
             "API para Lista de Reproducción de Video Streaming",
