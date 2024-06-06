@@ -1,11 +1,11 @@
 import link_bio.constants as const
 from link_bio.model.Live import Live
 
-from .SupabaseAPI import SupabaseAPI
+from .BaseAPI import BaseAPI
 from .TwitchAPI import TwitchAPI
 
 TWITCH_API = TwitchAPI()
-SUPABASE_API = SupabaseAPI()
+BASE_API = BaseAPI()
 
 
 async def repo() -> str:
@@ -17,4 +17,4 @@ async def live(user: str) -> Live:
 
 
 async def featured():
-    return SUPABASE_API.featured()
+    return BASE_API.featured()

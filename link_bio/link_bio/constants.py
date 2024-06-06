@@ -109,3 +109,8 @@ JAVASCRIPT_URL = (
 HTML_CSS_URL = (
     "https://platzi.com/p/mikelm3tecnoit/curso/2008-html-css/diploma/detalle/"
 )
+
+# Cursos que estoy tomando
+BASE_TITLE = "Backend desde cero"
+BASE_IMAGE = "https://camo.githubusercontent.com/b1c163892bcd2a9e02dcfae6c11eb2307af3867a35c3f1a8fd50053fc890344c/687474703a2f2f69332e7974696d672e636f6d2f76692f5f793971515a58453234412f6d617872657364656661756c742e6a7067"
+BASE_URL = "https://github.com/mouredev/Hello-Python"

@@ -47,7 +47,7 @@ def index_links() -> rx.Component:
         rx.cond(
             PageState.featured_info,
             rx.vstack(
-                title("Curso que voy a tomar próximamente"),
+                title("Curso que estoy tomando actualmente"),
                 rx.flex(
                     rx.foreach(
                         PageState.featured_info,

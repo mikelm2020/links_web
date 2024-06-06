@@ -1,3 +1,2 @@
-reflex==0.5.1
+reflex==0.5.3
 python-dotenv
-supabase
